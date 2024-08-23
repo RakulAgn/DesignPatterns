@@ -1,0 +1,20 @@
+{
+  "name": "designpatterns",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "watch:build": "tsc --watch",
+    "watch:start": "tsc-watch --onSuccess \"node dist/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.5.4"
+  }
+}
