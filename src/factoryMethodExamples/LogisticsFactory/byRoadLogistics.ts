@@ -1,6 +1,6 @@
-import { Product } from "./interface";
+import { Product } from "../../interface/interface";
+import { Operation } from "../../types/types";
 import { Logistics } from "./logistics";
-import { Operation } from "./types";
 
 export class ByRoadLogistics extends Logistics {
   public PackagingGoods(): Product {

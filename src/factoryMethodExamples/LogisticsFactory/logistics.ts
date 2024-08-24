@@ -1,4 +1,4 @@
-import { Product } from "./interface";
+import { Product } from "../../interface/interface";
 
 export abstract class Logistics {
   public abstract PackagingGoods(): Product;
