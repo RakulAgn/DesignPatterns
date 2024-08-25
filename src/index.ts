@@ -1,3 +1,6 @@
+import { PayPalFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/Paypal";
+import { SquareFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/Square";
+import { StripeFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/Stripe";
 import {
   ByAirLogistics,
   ByRoadLogistics,
@@ -10,6 +13,7 @@ import {
   SmsNotification,
   WebNotification,
 } from "./factoryMethodExamples/NotificationFactory";
+import { PaymentGatewayFactory } from "./interface/interface";
 
 /**
  *
@@ -53,4 +57,37 @@ notificatonOperation(new WebNotification());
 
 /**
  * Notification Example Ends
+ */
+
+/**
+ *
+ * Abstract Payment Proccessing Example Start
+ */
+
+function processOrder(
+  factory: PaymentGatewayFactory,
+  amount: number,
+  details: string
+) {
+  const processor = factory.createProcessor();
+  const validator = factory.createValidator();
+
+  if (validator.validatePayment(details)) {
+    processor.proccessPayment(amount);
+  } else {
+    console.log("Payment validation failed.");
+  }
+}
+
+const paypalFactory = new PayPalFactory();
+const stripeFactory = new StripeFactory();
+const squareFactory = new SquareFactory();
+
+processOrder(paypalFactory, 100, "PayPal transaction details");
+processOrder(stripeFactory, 200, "Stripe transaction details");
+processOrder(squareFactory, 300, "Square transaction details");
+
+/**
+ *
+ * Abstract Payment Proccessing Example End
  */
