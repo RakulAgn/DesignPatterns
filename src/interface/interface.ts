@@ -1,8 +1,4 @@
-import { NotificatonOperation, Operation } from "../types/types";
-
-export interface Product {
-  operation(): Operation;
-}
+import { NotificatonOperation } from "../types/types";
 
 export interface Notify {
   operation(): NotificatonOperation;

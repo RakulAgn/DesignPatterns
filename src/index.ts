@@ -2,11 +2,12 @@ import { PayPalFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/
 import { SquareFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/Square";
 import { StripeFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/Stripe";
 import {
-  ByAirLogistics,
   ByRoadLogistics,
+  ByAirLogistics,
   BySeaLogistics,
-  Logistics,
-} from "./factoryMethodExamples/LogisticsFactory";
+  logisticsOperations,
+} from "./creational_design_patterns/factory_method/logistics";
+
 import {
   Notification,
   PushNotification,
@@ -19,11 +20,6 @@ import { PaymentGatewayFactory } from "./interface/interface";
  *
  * Logistics Examples Starts
  */
-function logisticsOperations(logistics: Logistics) {
-  const packagingInformation = logistics.preparePackage();
-  console.table(packagingInformation);
-}
-
 console.warn("By Road Logistics:");
 logisticsOperations(new ByRoadLogistics());
 
@@ -32,6 +28,7 @@ logisticsOperations(new BySeaLogistics());
 
 console.warn("\nBy Air Logistics:");
 logisticsOperations(new ByAirLogistics());
+
 /**
  *
  * Logistics Examples Ends

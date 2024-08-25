@@ -1,8 +1,8 @@
-# Creational Design Patterns
+# [Creational Design Patterns](src/creational_design_patterns)
 
-## Factory Method Examples
+## [Factory Method Examples](src/creational_design_patterns/factory_method)
 
-[LogisticsExample](src/factoryMethodExamples/LogisticsFactory) |
+[LogisticsExample](src/creational_design_patterns/factory_method/logistics) |
 [NotificationExample](src/factoryMethodExamples/NotificationFactory)
 
 ## Abstract Factory Example
