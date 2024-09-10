@@ -2,6 +2,10 @@ import { PayPalFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/
 import { SquareFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/Square";
 import { StripeFactory } from "./abstractfactoryExamples/AbstractPaymentFactory/Stripe";
 import {
+  ComputerDirector,
+  DesktopComputerCreation,
+} from "./creational_design_patterns/builder/ComputerCreation/computer";
+import {
   ByRoadLogistics,
   ByAirLogistics,
   BySeaLogistics,
@@ -88,3 +92,22 @@ processOrder(squareFactory, 300, "Square transaction details");
  *
  * Abstract Payment Proccessing Example End
  */
+
+/**
+ *  Builder Pattern Example
+ *
+ */
+
+const builder = new DesktopComputerCreation();
+const director = new ComputerDirector(builder);
+
+const customPC = new DesktopComputerCreation()
+  .setCPU({ brand: "AMD", model: "Ryzen 7 5800X", clockSpeed: 3.8 })
+  .setRAM({ size: 64, type: "DDR4" })
+  .setStorage({ size: 2000, type: "SSD" })
+  .setGPU({ brand: "AMD", model: "Radeon RX 6800", memory: 16 })
+  .getResult();
+
+console.log("Gaming", director.createGamingPc().toString());
+console.log("Office", director.createOfficePc().toString());
+console.log("Custom", customPC.toString());

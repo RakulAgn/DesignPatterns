@@ -8,3 +8,7 @@
 ## Abstract Factory Example
 
 [PaymentProccessing](src/abstractfactoryExamples/AbstractPaymentFactory)
+
+## [Builder Pattern Example](src/creational_design_patterns/builder)
+
+[ComputerBuilder](src/creational_design_patterns/builder/ComputerCreation)
